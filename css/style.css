@@ -18,7 +18,7 @@
 
     /***** Neutral *****/
     --gray: hsl(0, 0%, 75%);
-    --grayish-violet: hsl(257, 7%, 63%);
+    --grayish-violet: hsl(262, 4%, 50%);
     --very-dark-blue: hsl(255, 11%, 22%);
     --very-dark-violet: hsl(260, 8%, 14%);
 
@@ -27,7 +27,7 @@
     \*------------------------------*/
     --font-size: 18px;
     --weight-500: 500;
-    --weight-500: 700;
+    --weight-700: 700;
 }
 
 /*------------------------------*\
@@ -47,4 +47,67 @@
 body{
     font-family: 'Poppins', sans-serif;
     font-size: var(--font-size);
+    padding: 54px 164px;
 }
+
+/*------------------------------*\
+            #HEADER
+\*------------------------------*/
+
+.container-header{
+    border: 3px solid greenyellow;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-logo-navbar{
+    display: flex;
+    column-gap: 50px;
+}
+
+.logo{
+    padding: 5px;
+}
+
+.navbar ul{
+    display: flex;
+    column-gap: 32px;
+    padding: 3px;
+}
+
+.navbar ul li{
+    list-style: none;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: var(--grayish-violet);
+}
+
+
+.container-login-signup{
+    display: flex;
+}
+
+.container-login-signup div button{
+    width: 88px;
+    font-family: 'Poppins', sans-serif;
+    padding: 6px 8px;
+    border: none;
+    border-radius: 28px;
+    text-align: center;
+    outline: none;
+}
+
+.login{
+    background-color: transparent;
+    color: var(--grayish-violet);
+}
+
+.signup{
+    background-color: var(--cyan);
+    color: white;
+}
+
+
+

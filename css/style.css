@@ -279,6 +279,32 @@ body{
     margin-top: 11%;
 }
 
+/*------------------------------*\
+            #BOOST
+\*------------------------------*/
+
+.boost{
+    width: 100%;
+    height: 256px;
+    background-image: url(../assets/img/bg-boost-desktop.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: var(--dark-violet);
+}
+
+.container-boost{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 26px;
+    padding-top: 60px;
+}
+
+.container-boost h2{
+    color: white;
+}
+
 
 
 

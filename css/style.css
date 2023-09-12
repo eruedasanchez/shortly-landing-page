@@ -51,6 +51,10 @@ a{
     text-decoration: none;
 }
 
+svg path:is(:hover, :focus){
+    fill: var(--cyan);
+}
+
 /*------------------------------*\
             #BODY
 \*------------------------------*/
@@ -91,6 +95,11 @@ body{
     color: var(--grayish-violet);
 }
 
+.navbar ul li a:is(:hover, :focus){
+    cursor: pointer;
+    color: var(--very-dark-violet);
+}
+
 .container-login-signup{
     display: flex;
 }
@@ -102,6 +111,11 @@ body{
     border-radius: 28px;
     text-align: center;
     outline: none;
+}
+
+.button:is(:hover, :focus){
+    cursor: pointer;
+    filter: brightness(1.2);
 }
 
 .login{
@@ -324,18 +338,19 @@ body{
     column-gap: 75px;
 }
 
-.footer-link{
-    line-height: 2;
-}
-
-.footer-list li a{
-    color: var(--grayish-violet);
-}
-
 .footer-list-title{
     font-size: 20px;
     color: white;
     margin-bottom: 26px;
+}
+
+.footer-link{
+    color: var(--grayish-violet);
+    line-height: 2;
+}
+
+.footer-link:is(:hover, :focus){
+    color: var(--cyan);
 }
 
 .social-list{

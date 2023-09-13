@@ -253,6 +253,7 @@ body{
 .container-cards{
     width: 88%;
     display: flex;
+    position: relative;
 }
 
 .card{
@@ -704,14 +705,14 @@ body{
     }
 
     .card__image{
-        left: 38.5%;
+        left: 38.5vw;
     }
 
     .separator{
         transform: rotate(90deg);
         width: 24%;
         height: 8px;
-        margin-left: 37%;
+        margin-left: 37.5%;
     }
 
     /*------------------------------*\
@@ -738,6 +739,18 @@ body{
     }
 }
 
+@media(max-width:560px){
+    .card__image{
+        left: 37vw;
+    }
+}
+
+@media(max-width:490px){
+    .card__image{
+        left: 35.5vw;
+    }
+}
+
 @media(max-width:425px){
     /*------------------------------*\
             #MAIN-SECTION
@@ -757,6 +770,16 @@ body{
 
     .separator{
         margin-left: 39%;
+    }
+
+    .card__image{
+        left: 35.5vw;
+    }
+}
+
+@media(max-width:375px){
+    .card__image{
+        left: 33.8vw;
     }
 }
 

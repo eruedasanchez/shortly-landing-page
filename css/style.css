@@ -100,6 +100,10 @@ body{
     color: var(--very-dark-violet);
 }
 
+.navbar__container-login-signup, .open-menu{
+    display: none;
+}
+
 .container-login-signup{
     display: flex;
 }
@@ -552,12 +556,72 @@ body{
     /*------------------------------*\
                 #HEADER
     \*------------------------------*/
+
+    .container-logo-navbar{
+        position: relative;
+        /* border: 1px solid red; */
+    }
     
-    .container-login-signup, .navbar{
+    .container-login-signup{
         display: none;
     }
 
+    .navbar__container-login-signup{
+        display: block;
+    }
+
+    .navbar{
+        display: none;
+        position: absolute;
+        top: 130%;
+        left: -15%;
+        width: 366px;
+        background-color: var(--dark-violet);
+        text-align: center;
+        padding: 28px 26px;
+        border-radius: 10px;
+    }
+
+    .navbar.active{
+        display: block;
+    }
+
+    .navbar ul{
+        flex-direction: column;
+        row-gap: 38px;
+        padding-bottom: 38px;
+        border-bottom: 2px solid var(--grayish-violet);
+    }
+
+    .navbar ul li a{
+        color: white;
+        font-size: 20px;
+        font-weight: var(--weight-700);
+    }
+
+    .navbar__container-login-signup{
+        display: flex;
+        flex-direction: column;
+        row-gap: 28px;
+        margin-top: 26px;
+    }
+
+    .navbar__container-login-signup .login{
+        width: 100%;
+        font-size: 20px;
+        font-weight: var(--weight-700);
+        color: white;
+    }
+    
+    .navbar__container-login-signup .signup{
+        width: 100%;
+        font-size: 20px;
+        font-weight: var(--weight-700);
+        padding: 14px 0;
+    }
+    
     .open-menu{
+        display: block;
         border: 1px solid transparent;
         background-color: transparent;
         outline: none;

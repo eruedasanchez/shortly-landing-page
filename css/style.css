@@ -559,7 +559,6 @@ body{
 
     .container-logo-navbar{
         position: relative;
-        /* border: 1px solid red; */
     }
     
     .container-login-signup{
@@ -575,7 +574,7 @@ body{
         position: absolute;
         top: 130%;
         left: -15%;
-        width: 366px;
+        width: 86vw;
         background-color: var(--dark-violet);
         text-align: center;
         padding: 28px 26px;
@@ -743,6 +742,10 @@ body{
     /*------------------------------*\
             #MAIN-SECTION
     \*------------------------------*/
+
+    .container-text{
+        padding-top: 62px;
+    }
 
     .container-text p{
         width: 96%;

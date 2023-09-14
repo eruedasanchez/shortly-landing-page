@@ -53,14 +53,47 @@
             </div>
         </section>
         <section class="statistics">
-            <div class="container-shorten">
-                <div class="container-shorten__input">
-                    <input type="text" placeholder="Shorten a link here..." value="">
-                </div>
-                <div class="container-shorten__button">
-                    <button class="button shorten">Shorten It!</button>
-                </div>
-            </div>
+            <div class="container-form-results">
+                <form id="form" action="" class="container-shorten"> <!-- falta el id -->
+                    <div class="container-shorten__input">
+                        <input id="input" type="text" placeholder="Shorten a link here..." value="">
+                    </div>
+                    <div class="container-shorten__button">
+                        <button id="shorten-it" class="button shorten">Shorten It!</button>
+                    </div>
+                </form>
+                <ul id="links-list" class=""> <!--class="active"-->
+                    <!-- Inicio codigo a insertar en JS -->
+                    <!-- <li class="result">
+                        <a class="original-link" href="https://www.frontendmentor.io" target="_blank">https://www.frontendmentor.io</a>
+                        <div class="container-link-button">
+                            <a class="short-link" href="https://rel.ink/k4IKyk" target="_blank">https://rel.ink/k4IKyk</a>
+                            <div class="container-shorten__button">
+                                <button class="button copy">Copy</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="result">
+                        <a class="original-link" href="https://www.frontendmentor.io" target="_blank">https://www.frontendmentor.io</a>
+                        <div class="container-link-button">
+                            <a class="short-link" href="https://rel.ink/k4IKyk" target="_blank">https://rel.ink/k4IKyk</a>
+                            <div class="container-shorten__button">
+                                <button class="button copy">Copy</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="result">
+                        <a class="original-link" href="https://www.frontendmentor.io" target="_blank">https://www.frontendmentor.io</a>
+                        <div class="container-link-button">
+                            <a class="short-link" href="https://rel.ink/k4IKyk" target="_blank">https://rel.ink/k4IKyk</a>
+                            <div class="container-shorten__button">
+                                <button class="button copy">Copy</button>
+                            </div>
+                        </div>
+                    </li> -->
+                    <!-- Fin codigo a insertar en JS -->
+                </ul> 
+            </div>  
             <div class="container-content">
                 <h2>Advanced Statistics</h2>
                 <p>Track how your links are performing across the web with our advanced statistics dashboard.</p>

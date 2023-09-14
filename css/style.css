@@ -104,6 +104,10 @@ body{
     display: none;
 }
 
+.open-menu:is(:hover, :focus){
+    cursor: pointer;
+}
+
 .container-login-signup{
     display: flex;
 }
@@ -189,9 +193,22 @@ body{
     padding-left: 164px;
 }
 
+.container-form-results{
+    width: 83.7%;
+    margin-top: 11vh;
+}
+
+.container-form-results ul{
+    display: none;
+}
+
+.container-form-results ul.active{
+    display: block;
+}
+
 .container-shorten{
     position: absolute;
-    top: -10%;
+    top: -7%; 
     width: 74%;
     display: flex;
     justify-content: center;
@@ -227,6 +244,41 @@ body{
     color: white;
     padding: 14px 42px;
     border-radius: 10px;
+}
+
+.result{
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 30px;
+    column-gap: 30px;
+    margin-bottom: 16px;
+    border-radius: 10px;
+}
+
+.container-link-button{
+    display: flex;
+    column-gap: 26px;
+    align-items: center;
+}
+
+.original-link{
+    color: var(--very-dark-violet);
+}
+
+.short-link{
+    color: var(--cyan);
+    
+}
+
+.copy{
+    width: 160px;
+    background-color: var(--cyan);
+    font-size: var(--font-size);
+    color: white;
+    padding: 14px 4px;
+    border-radius: 10px; 
 }
 
 .container-content{
@@ -405,6 +457,10 @@ body{
         padding-left: 80px;
     }
 
+    .container-form-results{
+        width: 90%;
+    }
+    
     .container-shorten{
         width: 84%;
     }
@@ -511,10 +567,14 @@ body{
     .statistics{
         padding-left: 40px; 
     }
+
+    .container-form-results{
+        width: 93.5%;
+    }
     
     .container-shorten{
         width: 90%;
-        top: -7%;
+        top: -5%;
         padding: 30px;
     }
 
@@ -552,6 +612,39 @@ body{
         column-gap: 14px;
     }
 }
+
+@media(max-width:830px){
+    .copy{
+        width: 90px;
+        padding: 14px 2px;
+        
+    }
+
+    .original-link, .short-link{
+        font-size: 16px;
+    }
+}
+
+@media(max-width:675px){
+    .result{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .container-link-button{
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 10px;
+        margin-top: 10px;
+    }
+
+    .copy{
+        width: 100%;
+    }
+}
+
+
 
 @media(max-width:700px){
     /*------------------------------*\

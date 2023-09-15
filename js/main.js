@@ -78,7 +78,7 @@ const showShortLinks = async inputValue => {
 
                         let copyBtns = document.querySelectorAll(".copy");
 
-                        copyBtns.forEach(copyBtn => {
+                        copyBtns.forEach((copyBtn, index) => {
                             copyBtn.addEventListener("click", event => {
                                 copyBtns.forEach(btn => {
                                     btn.textContent = "Copy";
@@ -86,6 +86,19 @@ const showShortLinks = async inputValue => {
                                 })
                                 event.target.textContent = "Copied!";
                                 event.target.classList.add('background-clicked');
+                                
+
+                                // Copiado de links seleccionados en el portapapeles
+                                const shortLinks = [linksData.result.full_short_link, linksData.result.full_short_link2, linksData.result.full_short_link3];
+
+                                const shortLinkToCopy = shortLinks[index];
+
+                                const tempText = document.createElement("textarea");      // Se crea un elemento de texto temporal para almacenar el link en el portapapeles
+                                tempText.value = shortLinkToCopy;
+                                document.body.appendChild(tempText);                      // Se agrega unicamente el elemento textarea con su valor correspondiente al documento HTML
+                                tempText.select();                                        // Se selecciona el elemento que se encuentra en textarea (link seleccionado)
+                                document.execCommand("copy");                             // Se copia el texto seleccionado al portapapeles
+                                document.body.removeChild(tempText);                      // Se elimina unicamente el elemento temporal textarea
                             })
                         });
     } else {

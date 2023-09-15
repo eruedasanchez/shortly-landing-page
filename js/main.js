@@ -1,11 +1,14 @@
+let inputValue = '';
+const EMPTY = "";
+
 const navbar = document.getElementById('navbar');
 const openMenu = document.getElementById('open-menu');
 const form = document.getElementById('form');
 const input = document.getElementById('input');
 const shortenItBtn = document.getElementById('shorten-it');
-let linksList = document.getElementById('links-list');
+const inputEmpty = document.getElementById('input-empty');
 
-let inputValue = '';
+let linksList = document.getElementById('links-list');
 
 openMenu.addEventListener("click", () => {
     navbar.classList.toggle('active');
@@ -17,13 +20,23 @@ form.addEventListener("submit", e => {
 
 input.addEventListener("input", () => {
     inputValue = input.value;
-    console.log(inputValue);
+    if(inputValue === EMPTY) {
+        shortenItBtn.disabled = true;
+        input.classList.remove('grayish-violet'); 
+        inputEmpty.classList.add('active');
+    } else {
+        shortenItBtn.disabled = false;
+        input.classList.add('grayish-violet');
+        inputEmpty.classList.remove('active');
+    } 
 })
 
 shortenItBtn.addEventListener("click", () => {
     linksList.classList.add('active');
     showShortLinks(inputValue);
-    input.value = "";
+    input.classList.remove('grayish-violet');
+    inputEmpty.classList.add('active');
+    input.value = EMPTY;
 })
 
 const showShortLinks = async inputValue => {
@@ -31,15 +44,15 @@ const showShortLinks = async inputValue => {
     const data = await response.json();
 
     const linksData = data;
-    console.log(linksData);
-
-    linksList.innerHTML = `
+    
+    if(linksData.ok){
+        linksList.innerHTML = `
                             <li class="result">
                                 <a class="original-link" href="${linksData.result.original_link}" target="_blank">${linksData.result.original_link}</a>
                                 <div class="container-link-button">
                                     <a class="short-link" href="${linksData.result.full_short_link}" target="_blank">${linksData.result.short_link}</a>
                                     <div class="container-shorten__button">
-                                        <button class="button copy">Copy</button>
+                                        <button class="copy">Copy</button>
                                     </div>
                                 </div>
                             </li>
@@ -48,7 +61,7 @@ const showShortLinks = async inputValue => {
                                 <div class="container-link-button">
                                     <a class="short-link" href="${linksData.result.full_short_link2}" target="_blank">${linksData.result.short_link2}</a>
                                     <div class="container-shorten__button">
-                                        <button class="button copy">Copy</button>
+                                        <button class="copy">Copy</button>
                                     </div>
                                 </div>
                             </li>
@@ -57,9 +70,30 @@ const showShortLinks = async inputValue => {
                                 <div class="container-link-button">
                                     <a class="short-link" href="${linksData.result.full_short_link3}" target="_blank">${linksData.result.short_link3}</a>
                                     <div class="container-shorten__button">
-                                        <button class="button copy">Copy</button>
+                                        <button class="copy">Copy</button>
                                     </div>
                                 </div>
                             </li>
                         `;
+
+                        let copyBtns = document.querySelectorAll(".copy");
+
+                        copyBtns.forEach(copyBtn => {
+                            copyBtn.addEventListener("click", event => {
+                                copyBtns.forEach(btn => {
+                                    btn.textContent = "Copy";
+                                    btn.classList.remove('background-clicked');
+                                })
+                                event.target.textContent = "Copied!";
+                                event.target.classList.add('background-clicked');
+                            })
+                        });
+    } else {
+        linksList.innerHTML = `
+                                <li class="result">
+                                    <p class="original-link">${linksData.error}</p>
+                                </li>
+                            `;
+    }
 }
+

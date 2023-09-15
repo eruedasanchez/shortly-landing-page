@@ -121,7 +121,7 @@ body{
     outline: none;
 }
 
-.button:is(:hover, :focus){
+.button:is(:hover, :focus), .copy:is(:hover, :focus){
     cursor: pointer;
     filter: brightness(1.2);
 }
@@ -204,27 +204,40 @@ body{
 
 .container-form-results ul.active{
     display: block;
+    padding-top: 16px;
 }
 
 .container-shorten{
     position: absolute;
-    top: -7%; 
+    top: -8%; 
     width: 74%;
     display: flex;
     justify-content: center;
-    align-items: center;
     column-gap: 26px;
     background-color: var(--dark-violet);
     background-image: url(../assets/img/bg-shorten-desktop.svg);
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 50px 66px;
+    padding: 50px 66px; 
     border-radius: 8px;
 }
 
 .container-shorten__input{
     width: 66%;
     display: flex;
+    flex-direction: column;
+}
+
+.input-empty{
+    display: none;
+    margin-left: 3px;
+    margin-top: 4px;
+    font-style: italic;
+    color: var(--red);
+}
+
+.input-empty.active{
+    display: block;
 }
 
 .container-shorten__input input{
@@ -233,8 +246,17 @@ body{
     font-size: var(--font-size);
     color: var(--grayish-violet);
     padding: 14px 24px;
+    border: 1px solid var(--red);
     border-radius: 10px;
     outline: none;
+}
+
+.container-shorten__input input.grayish-violet{
+    border: 1px solid var(--grayish-violet);
+}
+
+.container-shorten__input input::placeholder{
+    color: var(--red);
 }
 
 .shorten{
@@ -269,16 +291,23 @@ body{
 
 .short-link{
     color: var(--cyan);
-    
 }
 
 .copy{
     width: 160px;
     background-color: var(--cyan);
+    font-family: 'Poppins', sans-serif;
     font-size: var(--font-size);
     color: white;
     padding: 14px 4px;
+    border: none;
     border-radius: 10px; 
+    text-align: center;
+    outline: none;
+}
+
+.background-clicked{
+    background-color: var(--very-dark-violet);
 }
 
 .container-content{
@@ -287,7 +316,7 @@ body{
     flex-direction: column;
     align-items: center;
     row-gap: 10px;
-    margin-top: 12%;
+    margin-top: 15%;
     margin-bottom: 10%;
 }
 
@@ -574,7 +603,7 @@ body{
     
     .container-shorten{
         width: 90%;
-        top: -5%;
+        top: -6%;
         padding: 30px;
     }
 

@@ -56,13 +56,14 @@
             <div class="container-form-results">
                 <form id="form" action="" class="container-shorten"> <!-- falta el id -->
                     <div class="container-shorten__input">
-                        <input id="input" type="text" placeholder="Shorten a link here..." value="">
+                        <input class="" id="input" type="text" placeholder="Shorten a link here..." value="">
+                        <p id="input-empty" class="input-empty active">Please add a link</p>
                     </div>
                     <div class="container-shorten__button">
-                        <button id="shorten-it" class="button shorten">Shorten It!</button>
+                        <button  id="shorten-it" class="button shorten" disabled>Shorten It!</button>
                     </div>
                 </form>
-                <ul id="links-list" class=""> <!--class="active"-->
+                <ul id="links-list" class=""> 
                     <!-- Inicio codigo a insertar en JS -->
                     <!-- <li class="result">
                         <a class="original-link" href="https://www.frontendmentor.io" target="_blank">https://www.frontendmentor.io</a>

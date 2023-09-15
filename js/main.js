@@ -34,8 +34,6 @@ input.addEventListener("input", () => {
 shortenItBtn.addEventListener("click", () => {
     linksList.classList.add('active');
     showShortLinks(inputValue);
-    input.classList.remove('grayish-violet');
-    inputEmpty.classList.add('active');
     input.value = EMPTY;
 })
 
@@ -108,5 +106,7 @@ const showShortLinks = async inputValue => {
                                 </li>
                             `;
     }
+    input.classList.remove('grayish-violet');
+    inputEmpty.classList.add('active');
 }
 

@@ -9,7 +9,7 @@
   
 
   <h2 align="center">Shortly Landing Page</h2>
-  Shortly is a full responsive landing page.
+  Shortly is a full responsive landing page which integrates the shrtcode API to create shortened URLs.
   <br/>Responsive for all devices, desktop first design. Build using HTML, CSS & JavaScript.
   <br/>
   <a href="https://eruedasanchez.github.io/shortly-landing-page/" target="_blank"><strong>➥ Live Demo</strong></a>
